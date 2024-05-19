@@ -13,6 +13,12 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+    public function session()
+    {
+        $current = auth()->guard()->name;
+        dump($current);
+    }
+
     public function loginPost(Request $request)
     {
         // Validate the request data
@@ -35,12 +41,6 @@ class AuthController extends Controller
         // If authentication fails, redirect back to the login page
         return redirect()->route('monitor')->withErrors(['email' => 'Invalid credentials.']);
     }
-    public function session()
-    {
-        $current = auth()->guard()->name;
-        dump($current);
-    }
-
 
     public function logout()
     {
