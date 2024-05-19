@@ -1,0 +1,7 @@
+:root {
+    --monitor-width: 1366px;
+    --monitor-height: 768px;
+}
+.monitor {
+    width: var(--monitor-width);
+}

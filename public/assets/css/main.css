@@ -1,0 +1,11 @@
+:root {
+    --body-bg: #0c1f23;
+    --monitor-width: 1366px;
+    --monitor-height: 768px;
+}
+.monitor {
+    width: var(--monitor-width);
+}
+body {
+    background-color: var(--body-bg) !important;
+}

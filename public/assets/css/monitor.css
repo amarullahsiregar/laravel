@@ -1,0 +1,26 @@
+:root {
+    --monitor-width: 1366px;
+    --monitor-height: 768px;
+}
+
+.slick-slide {
+    height: 82vh !important;
+    width: 78vw;
+    padding: 2vh 1vw;
+}
+
+/* Untuk Fixed Width Screen 1366px V */
+
+@media screen and (min-width: 1366px) and (max-width: 1366px) {
+    body {
+        /* background-image: url("/storage/1366x768-frame-test.png"); */
+        background-color: #d5e1e5;
+    }
+}
+@media screen and (min-width: 1920px) and (max-width: 1920px) {
+    body {
+        /* background-image: url("/storage/1920x1080-frame-test.png"); */
+        background-color: #d5e1e5;
+        background-size: auto;
+    }
+}

@@ -1,0 +1,10 @@
+:root {
+    --monitor-width: 1366px;
+    --monitor-height: 768px;
+}
+
+@media (pointer: coarse) {
+    body {
+        background-image: url("/storage/Mobile-frame-test.png");
+    }
+}
