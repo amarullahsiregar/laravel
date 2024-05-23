@@ -16,7 +16,7 @@ Route::middleware('web')->group(function () {
 
 
 Route::group(['middleware' => ['auth:administrator']], function () {
-    Route::get('/dosens',  [DosenController::class, 'index'])->name('dosen.lists');
+    Route::get('/dosens',  [AdministratorController::class, 'dosens'])->name('dosen.lists');
     Route::get('/mahasiswas', [AdministratorController::class, 'mahasiswas'])->name('mahasiswa');
     Route::get('/mahasiswa/{nim}', [AdministratorController::class, 'editStudent']);
     Route::get('/mahasiswa-add/{key}', [AdministratorController::class, 'addStudent'])->name('add mahasiswa');

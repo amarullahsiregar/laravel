@@ -17,7 +17,7 @@
         <div class="px-4 py-5 sm:px-6">
             @if($details!=null)
             <div>
-                <h1 class="text-lg leading-6 font-medium text-gray-900">
+                <h1 class="text-2xl leading-6 font-medium text-gray-900 mb-5">
                     <div>Dashboard Admin</div>
                 </h1>
 
@@ -35,11 +35,19 @@
                         </p>
                     </div>
                     <hr class="my-6 border-t border-gray-300">
-                    <div class="flex-col">
+                    <div class="flex-col mb-5">
                         <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Mahasiswa Tugas Akhir : {{ count($mahasiswas) }}</span>
                         <a href="{{ url('mahasiswas') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
                             <p class="inline xl:hidden">Lihat</p>
                             <p class="hidden xl:inline">Lihat Semua Mahasiswa</p>
+                        </a>
+
+                    </div>
+                    <div class="flex-col mb-5">
+                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Dosen Aktif Membimbing : {{ count($dosens) }}</span>
+                        <a href="{{ url('dosens') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                            <p class="inline xl:hidden">Lihat</p>
+                            <p class="hidden xl:inline">Lihat Semua Dosen</p>
                         </a>
 
                     </div>

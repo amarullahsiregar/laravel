@@ -11,11 +11,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
-
-        <!-- Add Tailwind -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Add Tailwind -->
-        {{-- @vite([]) --}}
+
 
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">

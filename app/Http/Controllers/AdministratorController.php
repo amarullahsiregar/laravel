@@ -16,12 +16,19 @@ class AdministratorController extends Controller
         if (Administrator::find($username) != null) {
             $details = Administrator::find($username);
             $mahasiswas = Mahasiswa::all();
-            return view('admin.dashboard', compact('details', 'mahasiswas'));
+            $dosens = Dosen::all();
+            return view('admin.dashboard', compact('details', 'mahasiswas', 'dosens'));
         } else {
             // $current = auth()->guard()->name;
             // dump($current);
             return redirect()->route('logout-admin');
         }
+    }
+    public function dosens(Request $request)
+    {
+        $dosens = Dosen::all();
+        $key = auth()->guard()->user()->id;
+        return view('dosen.index', compact('dosens', 'key'));
     }
     public function mahasiswas(Request $request)
     {

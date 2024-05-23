@@ -11,8 +11,7 @@
     <!-- My Css -->
     @yield('adds')
     <script src="https://cdn.tailwindcss.com"></script>
-    {{-- @vite('resources/css/app.css') --}}
-    {{-- @vite([]) --}}
+
 </head>
 <body>
     @yield('content')
