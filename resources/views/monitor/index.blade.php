@@ -7,7 +7,7 @@
 
 @section('content')
 </head>
-<body class="bg-sky-200 p-6">
+<body class="bg-white p-6">
 <div class="main-container">
     <h1 class="text-5xl tanggal mb-3 px-5 pb-5">
         {{ \Carbon\Carbon::now()->isoFormat('dddd') }}
@@ -17,20 +17,20 @@
         @foreach ($dosens as $dosen)
             @switch($dosen->status_kehadiran)
                 @case('Hadir')
-                    <div class="rounded-xl mx-2 xl:mx-3 hadir bg-emerald-500 xl:bg-green-500 xl:text-white">
+                    <div class="border border-gray-400 rounded-lg shadow xl:rounded-xl mx-2 xl:mx-3 hadir    bg-emerald-500 xl:bg-green-500 text-white">
                     @break
                 @case('Tidak Hadir')
-                    <div class="rounded-xl mx-2 xl:mx-3 absen bg-red-500 text-white ">
+                    <div class="border border-gray-400 rounded-lg shadow xl:rounded-xl mx-2 xl:mx-3 absen    bg-red-500 text-white ">
                     @break
                 @case('Mengajar')
-                    <div class="rounded-xl mx-2 xl:mx-3 mengajar bg-sky-500">
+                    <div class="border border-gray-400 rounded-lg shadow xl:rounded-xl mx-2 xl:mx-3 mengajar bg-sky-500 ">
                     @break
                 @default
 
             @endswitch
                         <div class="">
                             <div >
-                                <h1 class="nama_dosen text-center min-h-28 text-xl xl:text-5xl mt-20 xl:mt-10 mb-6">
+                                <h1 class="nama_dosen font-bold text-center min-h-28 text-xl xl:text-5xl xl:mt-5 2xl:mt-10 mb-2 mb-2">
                                     {{ $dosen->nama }}
                                 </h1>
                                 <div class="status-kehadiran text-center">
@@ -40,12 +40,12 @@
                             </div>
                         </div>
                         <div class="bg-white text-black rounded-md min-h-80">
-                            <h1 class="text-center pt-3 text-md xl:text-3xl">Antrean Bimbingan</h1>
+                            <h1 class="text-center pt-3 text-md xl:text-3xl">Antrean Bimbingan | maksimal: {{ $dosen->slot_bimbingan }}</h1>
                             <table class="table-auto border-gray-400 m-5 " id="users-list">
                                 <thead class="">
                                     <tr class="tr-mahasiswa">
-                                        <th  class="p-1 border border-gray-400 min-w-full" style="width: 11.2641%;">Nama</th>
-                                        <th  class="p-1 border border-gray-400 min-w-80" style="width: 7.07134%;">Status</th>
+                                        <th  class="p-1 border border-gray-400 min-w-full">Nama</th>
+                                        <th  class="p-1 border border-gray-400 min-w-60" >Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,13 +53,13 @@
                                         @if ($antrian->email == $dosen->email)
                                         @switch($antrian->status)
                                             @case('Selesai')
-                                                <tr class="h-12 py-2 bg-lime-200">
+                                                <tr class="h-12 py-2 bg-sky-300">
                                                 @break
                                             @case('Proses')
-                                                <tr class="h-12 py-2 bg-yellow-100">
+                                                <tr class="h-12 py-2 bg-lime-400">
                                                 @break
                                             @case('Menunggu')
-                                                <tr class="h-12 py-2 bg-yellow-200">
+                                                <tr class="h-12 py-2 bg-yellow-400">
                                                 @break
                                             @default
                                         @endswitch
@@ -88,7 +88,7 @@
             slidesToShow: 2,
             slidesToScroll: 2,
             infinite: false,    //true untuk slide berulang ke awal
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 6000,
             dots: true,
             arrows: true,
