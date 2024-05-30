@@ -28,7 +28,7 @@
         <div class="card">
             <div class="divide-x divide-dashed card-header pb-0 px-3">
                 <a href="{{ url('/') }}">
-                    <button class="mb-5 rounded border-gray-600 border-2 px-5 bg-gray-300" onclick="alert('Kembali Ke Home')"><< Landing Page</button>
+                    <button class="mb-5 rounded border-gray-600 border-2 px-5 bg-gray-300" onclick="alert('Kembali Ke Home')">◀ Landing Page</button>
                 </a>
                 <h1 class="border-gray-800 text-xl">Profil Mahasiswa</h1>
             </div>

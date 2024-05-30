@@ -3,7 +3,7 @@
 
 @php
 $details = array('email'=>'sambilansada@gmail.com');
-$nav1 = "<< Dashboard";
+$nav1 = "◀ Dashboard";
 $nav1ref =  url('administrator-dashboard'.'/' . 1 );
 @endphp
 
