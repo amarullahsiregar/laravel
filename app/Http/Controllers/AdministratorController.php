@@ -24,7 +24,7 @@ class AdministratorController extends Controller
             return redirect()->route('logout-admin');
         }
     }
-    public function dosens(Request $request)
+    public function dosens()
     {
         $dosens = Dosen::all();
         $key = auth()->guard()->user()->id;

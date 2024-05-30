@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MonitorController;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +15,8 @@ Route::middleware('web')->group(function () {
 
 
 Route::group(['middleware' => ['auth:administrator']], function () {
-    Route::get('/dosens',  [AdministratorController::class, 'dosens'])->name('dosen.lists');
-    Route::get('/mahasiswas', [AdministratorController::class, 'mahasiswas'])->name('mahasiswa');
+    Route::get('/dosens',  [AdministratorController::class, 'dosens'])->name('dosens');
+    Route::get('/mahasiswas', [AdministratorController::class, 'mahasiswas'])->name('mahasiswas');
     Route::get('/mahasiswa/{nim}', [AdministratorController::class, 'editStudent']);
     Route::get('/mahasiswa-add/{key}', [AdministratorController::class, 'addStudent'])->name('add mahasiswa');
     Route::post('/mahasiswa-add-post/{key}', [AdministratorController::class, 'storeStudent']);
