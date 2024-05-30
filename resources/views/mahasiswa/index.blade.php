@@ -20,7 +20,7 @@ $nav1ref =  url('administrator-dashboard'.'/' . 1 );
                         <div class="ms-auto my-auto mt-lg-0 mt-4">
                             <div class="ms-auto my-auto">
                                 <a href="{{'/mahasiswa-add'.'/'.$key}}" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
-                                    <button type="submit" class="btn  btn-md mt-4 mb-4 ">+&nbsp; Tambah Mahasiswa</button>
+                                    <button type="submit" class="btn btn-md mt-4 mb-4 font-bold">+&nbsp; Tambah Mahasiswa</button>
                                 </a>
                             </div>
                         </div>
@@ -29,24 +29,23 @@ $nav1ref =  url('administrator-dashboard'.'/' . 1 );
                 <table class="table table-flush dataTable-table m-5 border-2 max-w-100" id="users-list">
                     <thead class="thead-light">
                         <tr class=" p-5 ">
-                            <th data-sortable="" style="width: 7.07134%;"><a href="#" class="dataTable-sorter">ID</a></th>
-                            <th data-sortable="" style="width: 11.2641%;"><a href="#" class="dataTable-sorter">NAME</a></th>
-                            <th data-sortable="" style="width: 19.9625%;"><a href="#" class="dataTable-sorter">EMAIL</a></th>
-                            <th data-sortable="" style="width: 20.025%;"><a href="#" class="dataTable-sorter">DOSBING 1</a></th>
-                            <th data-sortable="" style="width: 20.025%;"><a href="#" class="dataTable-sorter">DOSBING 2</a></th>
-                            <th data-sortable="" style="width: 10.4506%;"><a href="#" class="dataTable-sorter">ACTION</a></th>
+                            <th data-sortable="" class="border border-t-2 w-1/12"><a href="#" class="dataTable-sorter">NIM</a></th>
+                            <th data-sortable="" style="width: 11.2641%;" class="border border-t-2"><a href="#" class="dataTable-sorter">Nama Mahsiswa</a></th>
+                            <th data-sortable="" style="width: 19.9625%;" class="border border-t-2"><a href="#" class="dataTable-sorter">E-mail</a></th>
+                            <th data-sortable="" style="width: 20.025%;" class="border border-t-2"><a href="#" class="dataTable-sorter">Dosen Pembimbing 1</a></th>
+                            <th data-sortable="" style="width: 20.025%;" class="border border-t-2"><a href="#" class="dataTable-sorter">Dosen Pembimbing 2</a></th>
+                            <th data-sortable="" style="width: 10.4506%;" class="border border-t-2"><a href="#" class="dataTable-sorter">Edit</a></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($mahasiswas as $mahasiswa)
                         <tr>
-                            <td class="text-sm">{{ $mahasiswa->nim }}</td>
-
-                            <td class="text-sm">{{ $mahasiswa->nama }}</td>
-                            <td class="text-sm">{{ $mahasiswa->email }}</td>
-                            <td class="text-sm">{{ $mahasiswa->dosbing1 }}</td>
-                            <td class="text-sm">{{ $mahasiswa->dosbing2 }}</td>
-                            <td class="text-sm">
+                            <td class="text-sm border border-t-2 pl-5">{{ $mahasiswa->nim }}</td>
+                            <td class="text-sm border border-t-2 pl-5 font-bold">{{ $mahasiswa->nama }}</td>
+                            <td class="text-sm border border-t-2 pl-5">{{ $mahasiswa->email }}</td>
+                            <td class="text-sm border border-t-2 pl-5">{{ $mahasiswa->dosbing1 }}</td>
+                            <td class="text-sm border border-t-2 pl-5">{{ $mahasiswa->dosbing2 }}</td>
+                            <td class="text-sm border border-t-2 pl-5">
                                 <a href="/mahasiswa/{{ $mahasiswa->nim }}" class="mx-3 p-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                     <svg width="25px" height="25px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

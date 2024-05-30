@@ -19,33 +19,37 @@
     <div class="container-xl">
         <div class="card form-container mt-8">
             <div class="card-header mx-5 mb-5 pb-1 text-left bg-transparent">
-                    <h1 class="position-absolute font-weight-bolder text-title grd-steelblue ">Tambah Data Dosen</h1>
+                    <h1 class="text-2xl leading-6 font-bold text-gray-900 mb-5">
+                        <div>
+                            Tambah Data Dosen
+                        </div>
+                    </h1>
             </div>
             <div class="mt-5 mt-lg-4">
                 <form action="/dosen-add-post/{{$details->id}}" method="post">
                     @csrf
 
-                    <div class="row mb-1 mx-5">
-                        <label class="col-sm-3 col-form-label" for="id">Nomor Induk : </label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label class="col-sm-3 col-form-label" for="id">Nomor Induk Dosen : </label>
                         <input type="number" class="{{ $inputclass }}" name="id" id="id" required>
                     </div>
                     <br>
-                    <div class="row mb-1 mx-5">
-                        <label class="col-sm-3 col-form-label" for="email">E-mail : </label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label class="col-sm-3 col-form-label" for="email">E-mail Dosen: </label>
                         <input type="email" class="{{ $inputclass }}" name="email" id="email" required>
                     </div>
                     <br>
-                    <div class="row mb-1 mx-5">
-                        <label class="col-sm-3 col-form-label" for="nama">Nama : </label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label class="col-sm-3 col-form-label" for="nama">Nama Dosen: </label>
                         <input type="text" class="{{ $inputclass }}" name="nama" id="nama" required>
                     </div>
                     <br>
-                    <div class="row mb-1 mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-sm-3 col-form-label" for="inisial_dosen">Inisial : </label>
                         <input type="text" class="{{ $inputclass }}" name="inisial_dosen" id="inisial_dosen" required>
                     </div>
                     <br>
-                    <div class="row mb-1 mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-sm-3 col-form-label" for="password">Password : </label>
                         <input type="password" class="{{ $inputclass }}" name="password" id="password" required>
                     </div>

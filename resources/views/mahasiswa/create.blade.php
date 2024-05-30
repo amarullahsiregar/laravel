@@ -19,51 +19,55 @@
     <div class="container-xl">
         <div class="card form-container mt-8">
             <div class="card-header mx-5 mb-5 pb-1 text-left bg-transparent">
-                    <h1 class="position-absolute font-weight-bolder text-title grd-steelblue ">Tambah Data Mahasiswa</h1>
+                    <h1 class="text-2xl leading-6 font-bold text-gray-900 mb-5">
+                        <div>
+                            Tambah Data Mahasiswa
+                        </div>
+                    </h1>
             </div>
             <div class="mt-5 mt-lg-4">
                 <form action="/mahasiswa-add-post/{{$details->id}}" method="post">
                     @csrf <!-- Laravel CSRF token-->
-                    <div class="mb-3 row mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-md-2 col-form-label" for="nim">NIM : </label>
                         <div class="col-md-10">
                             <input type="number" class="{{ $inputclass }}" name="nim" id="nim" required>
                         </div>
                     </div>
-                    <div class="mb-3 row mx-5">
-                        <label class="col-md-2 col-form-label" for="nama">Nama : </label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label class="col-md-2 col-form-label" for="nama">Nama Mahasiswa: </label>
                         <div class="col-md-10">
                             <input type="text" class="{{ $inputclass }}" name="nama" id="nama" required>
                         </div>
                     </div>
 
-                    <div class="mb-3 row mx-5">
-                        <label for="email" class="col-md-2 col-form-label">Email : </label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label for="email" class="col-md-2 col-form-label">E-mail Mahasiswa: </label>
                         <div class="col-md-10">
                             <input type="email" class="{{ $inputclass }}" placeholder="user@email.com" id="email"  name="email" >
                         </div>
                     </div><!-- end row -->
-                    <div class="mb-3 row mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-md-2 col-form-label" for="password">Password : </label>
                         <div class="col-md-10">
                             <input type="password" class="{{ $inputclass }}" name="password" id="password" required>
                         </div>
                     </div>
-                    <div class="mb-3 row mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-md-2 col-form-label" for="topik_ta">Topik TA : </label>
                         <div class="col-md-10">
                             <input type="text" class="{{ $inputclass }}" name="topik_ta" id="topik_ta" required>
                         </div>
                     </div>
 
-                    <div class="mb-3 row mx-5">
+                    <div class="mb-3 row mx-5 w-10/12">
                         <label class="col-md-2 col-form-label" for="dosbing1">E-mail Dosen Pembimbing 1: </label>
                         <div class="col-md-10">
                             <input type="email" class="{{ $inputclass }}" name="dosbing1" id="dosbing1" required>
                         </div>
                     </div>
-                    <div class="mb-3 row mx-5">
-                        <label class="col-md-2 col-form-label" for="dosbing2">Email Dosen Pembimbing : *opsional</label>
+                    <div class="mb-3 row mx-5 w-10/12">
+                        <label class="col-md-2 col-form-label" for="dosbing2">E-mail Dosen Pembimbing 2: (opsional)</label>
                         <div class="col-md-10">
                             <input type="email" class="{{ $inputclass }}" name="dosbing2" id="dosbing2" >
                         </div>
