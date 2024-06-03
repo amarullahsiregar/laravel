@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Dashboard')
 @section('content')
-<body>
+
     @php
     $nav1 = "Dashboard Admin";
     $nav1ref = url('administrator-dashboard'.'/'.$details->id);
+    $nav1class = "active";
     $nav2 = "Tambah Dosen";
     $nav2ref = url('dosen-add'.'/'.$details->id);
     $nav3 = "Tambah Mahasiswa";
@@ -36,19 +37,34 @@
                     </div>
                     <hr class="my-6 border-t border-gray-300">
                     <div class="flex-col mb-5">
-                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Mahasiswa Tugas Akhir : {{ count($mahasiswas) }}</span>
-                        <a href="{{ url('mahasiswas') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                            <p class="inline xl:hidden">Lihat</p>
-                            <p class="hidden xl:inline">Lihat Semua Mahasiswa</p>
-                        </a>
-
+                        <span class="text-gray-700 uppercase xl:font-bold tracking-wider mb-2">Mahasiswa Tugas Akhir : {{ count($mahasiswas) }}</span>
+                        <div  class="inline xl:hidden">
+                            <br>
+                            <a href="{{ url('mahasiswas') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                                Lihat
+                            </a>
+                            <hr class="mt-6 border-t border-gray-300">
+                        </div>
+                        <div class="hidden xl:inline">
+                            <a href="{{ url('mahasiswas') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                                Lihat Semua Mahasiswa
+                            </a>
+                        </div>
                     </div>
                     <div class="flex-col mb-5">
-                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Dosen Aktif Membimbing : {{ count($dosens) }}</span>
-                        <a href="{{ url('dosens') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-                            <p class="inline xl:hidden">Lihat</p>
-                            <p class="hidden xl:inline">Lihat Semua Dosen</p>
-                        </a>
+                        <span class="text-gray-700 uppercase xl:font-bold tracking-wider mb-2">Dosen Aktif Membimbing : {{ count($dosens) }}</span>
+
+                            <div  class="inline xl:hidden">
+                                <br>
+                                <a href="{{ url('dosens') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                                Lihat
+                                </a>
+                            </div>
+                            <div class="hidden xl:inline">
+                                <a href="{{ url('dosens') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                                Lihat Semua Dosen
+                                </a>
+                            </div>
 
                     </div>
                 </div>

@@ -6,10 +6,11 @@
     @php
     $inputclass = "block w-full rounded-md border-0 py-1.5 pl-5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6";
 
-    $nav1= 'Tambah Dosen';
-    $nav1ref = url('dosen-add'.'/'.$details->id);
-    $nav2 = "Dashboard Admin";
-    $nav2ref = url('administrator-dashboard'.'/'.$details->id);
+    $nav1 = "Dashboard Admin";
+    $nav1ref = url('administrator-dashboard'.'/'.$details->id);
+    $nav2 = "Tambah Dosen";
+    $nav2ref = url('dosen-add'.'/'.$details->id);
+    $nav2class = "active";
     $nav3 = "Tambah Mahasiswa";
     $nav3ref = url('mahasiswa-add'.'/'.$details->id);
     $nav4 = "Logout";

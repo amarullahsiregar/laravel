@@ -117,10 +117,17 @@ class MahasiswaController extends Controller
     public function ambilAntrian($username)
     {
         $details = Mahasiswa::find($username);
-        $statushadir1 = Dosen::where('email', '=', $details->dosbing1)->first();
-        $statushadir2 = Dosen::where('email', '=', $details->dosbing2)->first();
+        $dosbing1 = Dosen::where('email', '=', $details->dosbing1)->first();
+        $dosbing2 = Dosen::where('email', '=', $details->dosbing2)->first();
         $antrians = AntrianBimbingan::all();
-        return view('mahasiswa.antri', compact('details', 'statushadir1', 'statushadir2', 'antrians'));
+        return view('mahasiswa.antri', compact('details', 'dosbing1', 'dosbing2', 'antrians'));
+    }
+    public function confirmAntrian($key)
+    {
+        $details = Mahasiswa::find($key);
+
+        $antrians = AntrianBimbingan::all();
+        return view('welcome', compact('details', 'antrians'));
     }
     public function createAntrian(Request $request)
     {
@@ -135,14 +142,19 @@ class MahasiswaController extends Controller
 
             if ($now == 0) {
                 # code...
+                $mahasiswa = Mahasiswa::find($request->nim);
                 AntrianBimbingan::create([
                     'nim' => $request->input('nim'),
-                    'nama_mahasiswa' => $request->input('nama'),
-                    'topik_ta' => $request->input('topik_ta'),
+                    'nama_mahasiswa' => $mahasiswa->nama,
+                    'topik_ta' => $mahasiswa->topik_ta,
                     'email' => $request->email,
                     'status' => $request->status,
                 ]);
-                return redirect('/mahasiswa-dashboard' . '/' . $request->nim);
+                // return redirect('/mahasiswa-dashboard' . '/' . $request->nim);
+                $judul_dialog = 'Anda Masuk ke antrian !';
+                $urutan = count(AntrianBimbingan::all()->where('email', '=', $request->email));
+                $dosen = Dosen::where('email', '=', $request->email)->first();
+                return view('mahasiswa.confirm', compact('judul_dialog', 'urutan', 'dosen'));
             } else {
                 $antrian = AntrianBimbingan::where('nim', '=', $request->nim)
                     ->where('email', '=', $request->email)

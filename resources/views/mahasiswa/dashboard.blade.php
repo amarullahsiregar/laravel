@@ -15,6 +15,7 @@
 
         $nav1 = "Dashboard Mahasiswa";
         $nav1ref =  url('mahasiswa-dashboard').'/'.$details->nim ;
+        $nav1class = "active";
         $nav2 = "Ambil Antrian";
         $nav2ref =  url('ambil-antrian').'/' . $details->nim ;
         $nav3 = "Ganti Password";
@@ -24,13 +25,11 @@
         $class = "text-orange-500";
     @endphp
     @include('partials.navbar')
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4 px-5">
         <div class="card">
             <div class="divide-x divide-dashed card-header pb-0 px-3">
-                <a href="{{ url('/') }}">
-                    <button class="mb-5 rounded border-gray-600 border-2 px-5 bg-gray-300" onclick="alert('Kembali Ke Home')"><< Landing Page</button>
-                </a>
-                <h1 class="border-gray-800 text-xl">Profil Mahasiswa</h1>
+                @include('partials.to_landing')
+                <h1 class="text-xl font-bold">Profil Mahasiswa</h1>
             </div>
             <div class="card-body pt-4 p-3">
                 @if($details==null)
@@ -42,7 +41,7 @@
                     <div class="row">
                         <label for="nim">NIM : </label>
                         <div>
-                            <input type="number" class="{{ $inputclass }}" value="{{ $details->nim }}" placeholder="NIM" name="nim" readonly>
+                            <input type="text" class="{{ $inputclass }}" value="{{ $details->nim }}" placeholder="NIM" name="nim" readonly>
                         </div>
                     </div>
                     <div class="row">
@@ -60,7 +59,7 @@
                     <div class="row">
                         <label for="topik">Topik TA : </label>
                         <div >
-                            <textarea  class="min-w-full border-2 border-sky-300 p-2" rows="4" placeholder="Topik TA" name="topik" >{{ $details->topik_ta }}</textarea>
+                            <textarea class="rounded min-w-full border-2 border-sky-300 p-2" rows="4" placeholder="Topik TA" name="topik" >{{ $details->topik_ta }}</textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -74,7 +73,7 @@
                             <div class="{{ $inputclass }}" >{{ $details->dosbing2 }}</div>
                         </div>
                     </div>
-                    <div class="row justify-content mt-2 mb-5 mx-5">
+                    <div class="row justify-content mt-2 mb-5">
                         <a href="#" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
                             <button type="submit" class="btn  btn-md mt-4 mb-4 ">Ubah Data</button>
                         </a>

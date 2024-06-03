@@ -6,12 +6,13 @@
 @php
     $inputclass = "block w-full rounded-md border-0 py-1.5 pl-5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6";
 
-    $nav1= 'Tambah Mahasiswa';
-    $nav1ref = url('mahasiswa-add'.'/'.$details->id);
-    $nav2 = "Dashboard Admin";
-    $nav2ref = url('administrator-dashboard'.'/'.$details->id);
-    $nav3 = "Tambah Dosen";
-    $nav3ref = url('dosen-add'.'/'.$details->id);
+    $nav1 = "Dashboard Admin";
+    $nav1ref = url('administrator-dashboard'.'/'.$details->id);
+    $nav2 = "Tambah Dosen";
+    $nav2ref = url('dosen-add'.'/'.$details->id);
+    $nav3 = "Tambah Mahasiswa";
+    $nav3ref = url('mahasiswa-add'.'/'.$details->id);
+    $nav3class = "active";
     $nav4 = "Logout";
     $nav4ref =  url('logout');
 @endphp
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row mx-5">
-                        <label class="col-md-2 col-form-label" for="dosbing2">Email Dosen Pembimbing : *opsional</label>
+                        <label class="col-md-2 col-form-label" for="dosbing2">Email Dosen Pembimbing 2: *opsional</label>
                         <div class="col-md-10">
                             <input type="email" class="{{ $inputclass }}" name="dosbing2" id="dosbing2" >
                         </div>

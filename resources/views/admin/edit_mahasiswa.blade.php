@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <title>{{ $user->nama }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Mahasiswa</title>
+@extends('layouts.admin')
+@section('title', 'Dashboard')
 
-    <!-- Add Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Tailwind -->
-</head>
-<body>
+@section('content')
+
 
     @php
         if (isset($details)) {
@@ -58,19 +48,23 @@
             <div class="row">
                 <label for="dosbing1">Dosen Pembimbing 1 :</label>
                 <div>
-                    <input type="email" class="{{ $inputclass }}" value="{{ $user->dosbing1 }}" placeholder="Email Mahasiswa" name="dosbing1"  >
+                    <input type="email" class="{{ $inputclass }}" value="" placeholder="{{ $user->dosbing1 }}" name="dosbing1"  >
                 </div>
             </div><div class="row">
                 <label for="dosbing2">Dosen Pembimbing 2 :</label>
                 <div>
-                    <input type="email" class="{{ $inputclass }}" value="{{ $user->dosbing2 }}" placeholder="Email Mahasiswa" name="dosbing2"  >
+                    <input type="email" class="{{ $inputclass }}" value="" placeholder="{{ $user->dosbing2 }}" name="dosbing2"  >
                 </div>
             </div>
             <div class="row justify-content mt-2 mb-5 mx-5">
-                <a href="#" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
+                <a href="#" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded mr-5">
                     <button type="submit" class="btn  btn-md mt-4 mb-4 ">Ubah Data</button>
                 </a>
-            </div>
+                <a href="{{ url('mahasiswa-delete').'/'.$user->nim }}" class="bg-gradient-to-r from-orange-500 to-red-400 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
+                    <button class="p-1 text-black font-bold">
+                        Hapus Mahasiswa !
+                    </button>
+                </a>
 
         </form>
 
@@ -78,5 +72,4 @@
     {{-- Detail Mahasiswa --}}
 
     </div>
-</body>
-</html>
+@endsection

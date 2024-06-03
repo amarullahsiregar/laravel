@@ -8,7 +8,9 @@
     width: 78vw;
     padding: 2vh 1vw;
 }
-
+body {
+    background: url("https://siakad.itera.ac.id/assets/img/bgh.jpg");
+}
 /* Untuk Fixed Width Screen 1366px V */
 
 @media screen and (min-width: 1366px) and (max-width: 1366px) {

@@ -13,13 +13,18 @@
 @endphp
 
 @include('partials.navbar')
-<div class="container-fluid py-4">
+<div class="container-fluid py-4 px-5">
+    @include('partials.backbutton')
     <div class="card">
         @if($details==null)
         Maaf user tidak ditemukan!
         @else
         <div class="card-header pb-0 px-3 my-5">
-            <h1 class="border-gray-800 text-xl">Ganti Password</h1>
+            <h1 class="text-2xl leading-6 font-bold text-gray-900 mb-5">
+                <div>
+                    Ganti Password
+                </div>
+            </h1>
         </div>
         <div class="divide-x divide-dashed card-header pb-0 px-3">
                 <h1 class="mb-5">{{ $details->nama }}</h1>

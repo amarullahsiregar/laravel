@@ -13,7 +13,8 @@
         {{ \Carbon\Carbon::now()->isoFormat('dddd') }}
         {{" ".date("d F Y");}}
     </h1>
-    <div class="bg-white rounded py-14 sm:py-32">
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow py-14 sm:py-32 hover:bg-gray-100">
+        {{-- <div class="bg-white rounded py-14 sm:py-32"> --}}
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">
                 Kehadiran Dosen Informatika
@@ -23,17 +24,19 @@
             @foreach ($dosens as $dosen)
                 @switch($dosen->status_kehadiran)
                     @case('Hadir')
-                    <div class="flex items-center justify-center rounded-lg border border-gray-200 px-6 py-5 shadow-sm bg-green-600 text-white">
+                    <div class="flex items-center bg-green-600 rounded px-6 py-5 justify-center text-white">
                         <p class="font-extrabold">
                             {{ $dosen->inisial_dosen }}
                         @break
+
                     @case('Tidak Hadir')
-                    <div class="flex items-center justify-center rounded-lg border border-gray-200px-6 py-5 shadow-sm bg-red-600 text-gray-800">
+                    <div class="flex items-center bg-red-600 rounded px-6 py-5 justify-center ">
                         <p class="font-bold hover:font-extrabold">
                             {{ $dosen->inisial_dosen }}
                         @break
+
                     @case('Mengajar')
-                    <div class="flex items-center justify-center rounded-lg border border-gray-200 text-white px-6 py-5 shadow-sm bg-sky-600">
+                    <div class="flex items-center bg-sky-600 rounded px-6 py-5 justify-center text-white">
                         <p class="font-extrabold">
                             {{ $dosen->inisial_dosen }}
                         @break
@@ -44,8 +47,8 @@
             @endforeach
 
             </div>
-        <div class="mt-5 p-1">Keterangan : <br class="mb-3">
-            <span class="p-1 m-1 rounded max-w-2xl bg-green-600 text-white">Hadir</span>
+        <div class="mt-5 ">Keterangan : <br class="mb-3">
+            <span class="p-1 rounded max-w-2xl bg-green-600 text-white">Hadir</span>
             <span class="p-1 m-1 rounded bg-sky-600 text-white">Mengajar</span>
             <span class="p-1 m-1 rounded bg-red-600">Tidak Hadir</span>
         </div>
